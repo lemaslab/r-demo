@@ -5,7 +5,7 @@ date: "3/15/2022"
 output: html_document
 ---
   
-  ```{r setup, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -22,20 +22,28 @@ library(tidyverse)
 
 # https://cran.r-project.org/web/packages/ontologyIndex/vignettes/reading-ontologies.html
 
-ontology <- get_ontology("~/milkmetabolomics-humanbovine/data/demo/doid.obo")
+doid <- get_ontology("~/r-demo/data/doid.obo")
 
 ```
 
 ```{r setup, include=FALSE}
 
-fit=get_term_property(ontology=ontology, property="ancestors", term="DOID:0080155", as_names=TRUE)
+ids=c("DOID:0050741","DOID:9270","DOID:13372")
 
 
+fit=get_term_property(ontology=doid, 
+                      property="ancestors", 
+                      term="DOID:0080155", 
+                      as_names=TRUE)
 
+terms=get_ancestors(doid, c("DOID:0080155"))
 
+minimal <- minimal_set(doid, terms)
 
+roots=c("DOID:655")
 
+exclude_descendants(doid, roots, terms)
 
-
+prune_descendants(doid, roots, terms)
 
 ```
