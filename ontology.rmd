@@ -33,7 +33,7 @@ ids=c("DOID:0050741","DOID:9270","DOID:13372")
 
 fit=get_term_property(ontology=doid, 
                       property="ancestors", 
-                      term="DOID:0080155", 
+                      term="DOID:0080716", 
                       as_names=TRUE)
 
 terms=get_ancestors(doid, c("DOID:0080155"))
@@ -45,5 +45,15 @@ roots=c("DOID:655")
 exclude_descendants(doid, roots, terms)
 
 prune_descendants(doid, roots, terms)
+
+```
+
+```{r setup, include=FALSE}
+
+# disease
+L0=c("DOID:0050117","DOID:7","DOID:14566",
+     "DOID:150","DOID:0014667","DOID:630",
+     "DOID:0080015","DOID:225")
+
 
 ```
