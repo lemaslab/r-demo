@@ -1,0 +1,41 @@
+---
+  title: "ontology"
+author: "Dominick J. Lemas"
+date: "3/15/2022"
+output: html_document
+---
+  
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r setup, include=FALSE}
+
+library(ontologyIndex)
+library(dplyr)
+library(tidyverse)
+
+```
+
+```{r setup, include=FALSE}
+
+# https://cran.r-project.org/web/packages/ontologyIndex/vignettes/reading-ontologies.html
+
+ontology <- get_ontology("~/milkmetabolomics-humanbovine/data/demo/doid.obo")
+
+```
+
+```{r setup, include=FALSE}
+
+fit=get_term_property(ontology=ontology, property="ancestors", term="DOID:0080155", as_names=TRUE)
+
+
+
+
+
+
+
+
+
+```
